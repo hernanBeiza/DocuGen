@@ -19,7 +19,7 @@ def leerCarpeta(titulo, carpetaFotos, archivoMarkdown):
 	carpetas = os.listdir(carpetaFotos);
 
 	imagenes = []
-	for archivo in carpetas:
+	for archivo in sorted(carpetas):
 		ruta = carpetaFotos+archivo;
 		#print(item);
 		#partes = item.split(".");
@@ -49,7 +49,7 @@ def crearArchivo(titulo, imagenes, rutaArchivoMarkdown):
 		archivoSalida.write("\n");
 		respuesta = True;
 		while respuesta == True:
-			descripcionFoto = input("Ingresa una descripción para la foto N "+str(indice)+": ");
+			descripcionFoto = input("Foto N: "+str(indice)+" Ingresa una descripción para la foto "+imagen+": ");
 			archivoSalida.write(" - " + descripcionFoto);
 			archivoSalida.write("\n");
 			respuesta = preguntar(indice);
